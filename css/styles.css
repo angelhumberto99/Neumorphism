@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(31, 44, 66);
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+    font-size: 2.5vmin;
+    color: rgba(255, 255, 255, 0.7);
+}
+/*header view*/
+header{
+    background:rgba(196, 196, 194, 1);
+    padding: 2vmin;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Roboto';
+    color: rgba(196, 196, 194, 1);
+    font-size: 10vmin;
+    text-shadow: -.5vmin -.5vmin 1vmin rgba(228, 228, 227, 0.87),
+    .5vmin .5vmin 1vmin rgba(0, 0, 0, 0.5);
+}
+/*clock view*/
+.clock-container{
+    width: 30vmin;
+    height: 30vmin;
+    border-radius: 50%;
+    box-shadow: -.5vmin -.5vmin 2vmin rgba(41, 55, 78, 0.6),
+                .5vmin .5vmin 2vmin rgba(0, 0, 0, 0.5);
+    margin: 10% auto;
+    position: relative;
+}
+.clock-container::after{
+    content: "";
+    position: absolute;
+    background: rgb(26, 37, 56);
+    border: rgba(255, 255, 255, 0.438) solid .15vmin;
+    border-radius: 50%;
+    width: 5%;
+    height: 5%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: -.2vmin -.2vmin 2vmin rgba(41, 55, 78, 0.6),
+                .2vmin .2vmin 2vmin rgba(0, 0, 0, 0.5);
+}
+.clock-container::before{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    width: 78%;
+    height: 78%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: inset -.5vmin -.5vmin 2vmin rgba(41, 55, 78, 0.75),
+    inset .5vmin .5vmin 2vmin rgba(0, 0, 0, 0.5);
+}
+.time-h{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.t1{ transform: rotate(30deg); }
+.t2{ transform: rotate(60deg); }
+.t3{ transform: rotate(90deg); }
+.t4{ transform: rotate(120deg); }
+.t5{ transform: rotate(150deg); }
+.t6{ transform: rotate(180deg); }
+.t7{ transform: rotate(210deg); }
+.t8{ transform: rotate(240deg); }
+.t9{ transform: rotate(270deg); }
+.t10{ transform: rotate(300deg); }
+.t11{ transform: rotate(330deg); }
+
+/*clock hands*/
+.hand{
+    --rotation: 0;
+    position: absolute;
+    left: 50%;
+    transform-origin: bottom;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transform: translate(-50%, 0%);
+    box-shadow: .5vmin .5vmin .7vmin rgba(0, 0, 0, 0.5);
+    transform: rotate(calc(var(--rotation)*1deg));
+}
+.hour-hand{
+    top: 30%;
+    height: 20%;
+    width: 1.2%;
+    background: white;
+}
+.minute-hand{
+    top: 15%;
+    height: 35%;
+    width: 1%;
+    background: white;
+}
+.second-hand{
+    top: 15%;
+    height: 35%;
+    width: .5%;
+    background: red;
+}
